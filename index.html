@@ -119,22 +119,12 @@
 
         .header-left h1 {
             font-size: 1.8rem;
-            animation: titleGlow 3s ease-in-out infinite alternate;
-            text-shadow: 0 0 30px rgba(76, 175, 80, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .header-left h1 .title-text {
             background: linear-gradient(45deg, #4CAF50, #81C784, #66BB6A, #2E7D32);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-
-        .header-left h1 .title-emoji {
-            font-size: 1.8rem;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+            text-shadow: 0 0 30px rgba(76, 175, 80, 0.3);
         }
 
         @keyframes titleGlow {
@@ -613,7 +603,7 @@
     <!-- Fixed Header -->
     <div class="header">
         <div class="header-left">
-            <h1><span class="title-emoji">🌍</span><span class="title-text">World Environment Day Gallery</span></h1>
+            <h1>🌍 World Environment Day Gallery</h1>
             <p class="subtitle">Capturing Nature's Beauty - Preserving Our Planet</p>
         </div>
         <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
@@ -683,11 +673,11 @@
             }
         });
 
-        // Alternative secret method: Triple-click on the title text (not emoji)
+        // Alternative secret method: Triple-click on the title
         let titleClickCount = 0;
         let titleClickTimer;
         
-        document.querySelector('.title-text').addEventListener('click', () => {
+        document.querySelector('.header-left h1').addEventListener('click', () => {
             titleClickCount++;
             
             if (titleClickCount === 1) {
